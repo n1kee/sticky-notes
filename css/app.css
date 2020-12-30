@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    background: none;
+}
+button {
+    cursor: pointer;
+    padding: 5px;
+}
+body {
+    position: relative;
+}
+.content {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+.creation-form {
+    border: 1px solid #ccc;
+}
+.creation-form td {
+    padding: 5px;
+}
+.notes {
+    flex: 1;
+    position: relative;
+}
+.note {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.7);
+    outline: none;
+}
+.note-content {
+    cursor: default;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+.note-border {
+    position: absolute;
+    z-index: 0;
+}
+.note-border:before, .note-border:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+}
+.note-border__bottom {
+    bottom: 0;
+}
+.note-border__right {
+    right: 0;
+}
+.note-border__top, .note-border__bottom {
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+}
+.note-border__top:after, .note-border__top:after {
+    bottom: 0;
+    transform: translate(0, 100%);
+}
+.note-border__top:before, .note-border__bottom:before {
+    transform: translate(0, -100%);
+}
+.note-border__top:after, .note-border__top:before,
+.note-border__bottom:after, .note-border__bottom:before {
+    height: 4px;
+    width: 100%;
+}
+.note-border__left, .note-border__right {
+    height: 100%;
+    width: 1px;
+    top: 0px;
+    bottom: 0px;
+}
+.note-border__left:after, .note-border__right:after {
+    right: 0;
+    transform: translate(100%);
+}
+.note-border__left:before, .note-border__right:before {
+    top: 0;
+    left: 0;
+    transform: translate(-100%);
+}
+.note-border__left:after, .note-border__left:before,
+.note-border__right:after, .note-border__right:before {
+    width: 4px;
+    height: 100%;
+}
+.note-corner__tr:hover, .note-corner__bl:hover {
+    cursor: nesw-resize;
+}
+.note-corner__tl:hover, .note-corner__br:hover {
+    cursor: nwse-resize;
+}
+.note-border__top:hover, .note-border__bottom:hover {
+    cursor: ns-resize;
+}
+.note-border__left:hover, .note-border__right:hover {
+    cursor: ew-resize;
+}
+.note-corner {
+    z-index: 1;
+    position: absolute;
+}
+.note-corner__tr {
+    right: 0;
+}
+.note-corner__bl {
+    bottom: 0;
+}
+.note-corner__br {
+    right: 0;
+    bottom: 0;
+}
+.note-corner {
+    position: absolute;
+    background: none;
+    width: 1px;
+    height: 1px;
+    border: 4px solid transparent;
+}
+.note-corner:before, .note-corner:after {
+    content: none;
+}
+.bin {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.controls > * {
+    padding: 15px;
+}
+.controls__btns {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+}
